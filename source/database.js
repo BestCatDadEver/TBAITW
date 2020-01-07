@@ -6,14 +6,20 @@ let db = null;
 module.exports = app => {
     
     const config = app.libs.configs;
-    console.log(config);
+    
     if(!db){
-        new Sequelize(
+        const sequelize = new Sequelize(
             config.database,
             config.username,
             config.password,
             config.params
         );
+
+        db = {
+            sequelize,
+            Sequelize,
+            model : {}
+        }
     }
     return db;
 }
