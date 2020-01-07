@@ -7,7 +7,10 @@ consign({
     //Current working directory
     cwd : __dirname
 })
-.include('libs/middlewares.js')
+.include('libs/configs.js')
+.then('database.js')
+.then('libs/middlewares.js')
+.then('routes')
 .then('libs/boot.js')
 .into(app)
 
