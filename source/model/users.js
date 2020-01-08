@@ -1,21 +1,23 @@
+
+
 module.exports = (sequelize, DataTypes) => {
 
-    
-    const Users = sequelize.define({
+    const Users = sequelize.define('Users', {
         id : {
-            type : DataTypes.INTEGER,
+            type : sequelize.INTEGER,
+            DataType : sequelize.INTEGER,
             primaryKey : true,
             autoIncrement : true
         },
         nombre : {
-            type : DataTypes.STRING,
+            type : sequelize.STRING,
             allowNull : false,
             validate : {
                 notEmpty : true
             }
         },
         cedula : {
-            type : DataTypes.INTEGER,
+            type : sequelize.INTEGER,
             allowNull : false,
             unique : true,
             validate : {
@@ -23,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         correo : {
-            type : DataTypes.STRING,
+            type : sequelize.STRING,
             allowNull : false,
             unique : true,
             validate : {
@@ -31,16 +33,17 @@ module.exports = (sequelize, DataTypes) => {
             }
         },
         telefono : {
-            type : DataTypes.INTEGER,
+            type : sequelize.INTEGER,
             allowNull : false,
             validate : {
                 notEmpty : true
             }
         },
         url : {
-            type : DataTypes.STRING
+            type : sequelize.STRING
         }
     });
-
+    console.log(Users.id)
     return Users;
+    
 };
