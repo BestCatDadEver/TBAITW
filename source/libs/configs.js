@@ -4,7 +4,7 @@ module.exports = {
     password : '',
     params : {
         dialect : 'sqlite',
-        storage : 'bestAppDb.sqlite',
+        storage : 'bestApp.sqlite',
         define : {
             underscore : true
         },

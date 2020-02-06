@@ -5,6 +5,7 @@ import path from 'path';
 //Se necesita inicializarlo.
 
 let db = null;
+
 module.exports = app => {
     
     const config = app.libs.configs;
@@ -23,7 +24,7 @@ module.exports = app => {
             models: {}
         };
         
-        console.log("LA BASE" + db.models)
+        
         const dir = path.join(__dirname, 'model');
         fs.readdirSync(dir).forEach(filename => {
             const modelDir = path.join(dir, filename);

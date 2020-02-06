@@ -1,9 +1,6 @@
 module.exports = app => {
 
-    //app.db.models.Users;
-
-    
-    const Users = app.db.models;
+    const Users = app.db.models.Users;
 
     app.route('/users')
     .get((request, response) => {
