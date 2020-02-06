@@ -20,9 +20,10 @@ module.exports = app => {
         db = {
             sequelize,
             Sequelize,
-            models : {}
+            models: {}
         };
-
+        
+        console.log("LA BASE" + db.models)
         const dir = path.join(__dirname, 'model');
         fs.readdirSync(dir).forEach(filename => {
             const modelDir = path.join(dir, filename);
@@ -31,11 +32,17 @@ module.exports = app => {
             const model = sequelize.import(modelDir);
             
             db.models[model.name] = model;
+            console.log("NOMBRE MODELO " +  model.name);
         });
+        
 
-        // Object.keys(db.models).forEach(key => {
-        //     db.models[key].associate(db.models);
-        // })
+       /* Object.keys(db.models).forEach(key => {
+            console.log("foreach" + key);
+            db.models[key].associate(db.models.name);
+            console.log(db.models[key]);
+        })*/
+        
     }
     return db;
+    
 }

@@ -42,7 +42,10 @@ module.exports = (sequelize,Sequelize) => {
             type : Sequelize.STRING
         }
     });
-    console.log(Users.id)
-    return Users;
+
     
-};
+    return Users;    
+}
+    
+    
+    
