@@ -14,8 +14,8 @@ module.exports = (sequelize,Sequelize) => {
             validate : {
                 notEmpty : true
             }
-        }
-       /* cedula : {
+        },
+        cedula : {
             type : Sequelize.INTEGER,
             allowNull : false,
             unique : true,
@@ -40,7 +40,7 @@ module.exports = (sequelize,Sequelize) => {
         },
         url : {
             type : Sequelize.STRING
-        }*/
+        }
     });
 
     
