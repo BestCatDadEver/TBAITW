@@ -27,6 +27,20 @@ module.exports = app => {
             response.status(412).json({msg : error.message});
         })
     })
+    .put((request, response) => {
+        Users.update(request.body, {where : request.params})
+        .then(result => response.sendStatus(204))
+        .catch(error => {
+            response.status(412).json({msg:error.message})
+        })
+    })
+    .delete((request, response) => {
+        Users.destroy({where : request.params})
+        .then(result => response.sendStatus())
+        .catch(error => {
+            response.status(402).json({msg: error.message})
+        })
+    });
     
     
 }
