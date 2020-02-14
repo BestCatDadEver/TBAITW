@@ -4,10 +4,10 @@
   "description": "API Using Node.Js and this other thing...SQLite.",
   "main": "index.js",
   "scripts": {
-    "build" : "./node_modules/.bin/babel source --out-dir dist",
+    "build": "./node_modules/.bin/babel source --out-dir dist",
     "babel-node": "babel-node source/index.js",
     "dev": "nodemon --exec npm run babel-node",
-    "start" : "node dist/index.js"
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,11 @@
   "bugs": {
     "url": "https://github.com/Klootzakken/TBAITW/issues"
   },
-  "engines" : {
-    "node" : "8.10.0"
+  "engines": {
+    "node": "8.10.0"
+  },
+  "start" : {
+    "start": "index.js"
   },
   "homepage": "https://github.com/Klootzakken/TBAITW#readme",
   "dependencies": {
